@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><polygon points='16,4 28,16 16,28 4,16' fill='%23111111'/></svg>">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>affordances and hauntings</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    :root {
+      --beige:      #ede6f7;
+      --beige-dark: #e0d6f0;
+      --ink:        #111111;
+      --ink-mid:    #7060a0;
+      --accent:     #3d2070;
+      --accent-alt: #6040b0;
+      --border:     #b09ad0;
+      --box-bg:     #faf8ff;
+    }
+    body {
+      background-color: var(--beige);
+      color: var(--ink);
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 16px;
+      line-height: 1.6;
+      padding: 4rem 1rem 2rem;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    header {
+      border: 2px solid var(--ink);
+      box-shadow: 5px 5px 0 var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .window-titlebar {
+      background-color: var(--ink);
+      color: var(--beige);
+      padding: 0.4rem 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .window-buttons {
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      opacity: 0.6;
+      user-select: none;
+    }
+    .site-title {
+      font-size: 0.85rem;
+      font-weight: bold;
+      color: var(--beige);
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+    .site-title:hover { opacity: 0.8; }
+    .window-body {
+      background-color: var(--box-bg);
+      padding: 1rem 0.75rem 1.2rem;
+    }
+    .tagline {
+      color: var(--ink-mid);
+      font-size: 0.85rem;
+      margin-bottom: 0.75rem;
+    }
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.85rem;
+      margin-right: 1.2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    nav a:hover {
+      color: var(--accent-alt);
+      border-bottom-color: var(--accent-alt);
+    }
+    main { margin-bottom: 3rem; }
+    .post-list { list-style: none; }
+    .post-list li {
+      border-top: 1px solid var(--border);
+      padding: 1rem 0 1rem 1.4rem;
+      position: relative;
+    }
+    .post-list li:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+    .post-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      top: 1rem;
+      color: var(--border);
+      font-size: 0.8rem;
+    }
+    .post-list li:hover::before { color: var(--accent); }
+    .post-meta {
+      font-size: 0.75rem;
+      color: var(--ink-mid);
+      margin-bottom: 0.25rem;
+    }
+    .post-title { font-size: 1rem; font-weight: bold; }
+    .post-title a {
+      color: #1a0a30;
+      text-decoration: none;
+      border-bottom: 1px dotted var(--border);
+    }
+    .post-title a:hover {
+      color: var(--accent);
+      border-bottom-style: solid;
+    }
+    .post-desc {
+      font-size: 0.85rem;
+      color: var(--ink-mid);
+      margin-top: 0.3rem;
+    }
+    footer {
+      border-top: 2px solid var(--border);
+      padding-top: 1rem;
+      font-size: 0.75rem;
+      color: var(--ink-mid);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { color: var(--accent-alt); }
+    .ascii-divider {
+      text-align: center;
+      color: var(--border);
+      font-size: 0.8rem;
+      letter-spacing: 4px;
+      margin: 0 0 2rem;
+      user-select: none;
+    }
+    .window-status {
+      border-top: 1px solid var(--border);
+      margin-top: 0.9rem;
+      padding-top: 0.5rem;
+      font-size: 0.7rem;
+      color: var(--border);
+      display: flex;
+      justify-content: space-between;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="window-titlebar">
+      <a href="/" class="site-title">affordances and hauntings</a>
+      <span class="window-buttons">─ □ ×</span>
+    </div>
+    <div class="window-body">
+      <p class="tagline">//personal blog//</p>
+      <nav style="display: flex; justify-content: space-between; align-items: baseline;">
+        <div>
+          <a href="https://open.spotify.com/artist/3zPJhqb7gBjyWjiFcwnsAa?si=Z8WCT5_1Q96TrbaBu9QyEg" target="_blank">music</a>
+          <a href="https://substack.com/@affordancesandhauntings" target="_blank">stack</a>
+          <a href="https://www.instagram.com/sharks.vinyl/" target="_blank">ig</a>
+        </div>
+        <div>
+          <a href="https://www.justinckirkwood.net/liber-indigo" target="_blank">indigo</a>
+          <a href="https://ia802901.us.archive.org/9/items/MarkFisherGhostsOfMyLifeWritingsOnDepreBookZZ.org/%5BMark_Fisher%5D_Ghosts_of_My_Life_Writings_on_Depre(BookZZ.org).pdf" target="_blank">ghosts</a>
+        </div>
+      </nav>
+      <div class="window-status">
+        <span>WIP</span>
+        <span>◈ london</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- FIELD BOX -->
+  <div style="margin-bottom: 2.5rem; border: 2px solid var(--ink); box-shadow: 5px 5px 0 var(--border); height: 71px; overflow: hidden; opacity: 0.7;">
+    <canvas id="noise-canvas"></canvas>
+  </div>
+
+  <div class="ascii-divider" aria-hidden="true">· · · ◈ · · ·</div>
+
+  <main>
+    <!-- WRITING -->
+    <div class="window-titlebar">
+      <span class="site-title">writing</span>
+      <span class="window-buttons">─ □ ×</span>
+    </div>
+    <div class="window-body" style="border: 2px solid var(--ink); border-top: none; box-shadow: 5px 5px 0 var(--border); margin-bottom: 2.5rem; padding: 0 0.75rem 1rem;">
+      <ul class="post-list" style="padding-top: 0.5rem;">
+        <li>
+          <p class="post-meta">2026</p>
+          <p class="post-title">
+            <a href="/writing/portishead-hauntology.html">Portishead and no-stalgia</a>
+          </p>
+        </li>
+      </ul>
+    </div>
+
+    <!-- GUESTBOOK -->
+    <div style="margin-bottom: 2.5rem;">
+      <div class="window-titlebar" id="guestbook-toggle" style="cursor: pointer; user-select: none;" onclick="toggleGuestbook()">
+        <span class="site-title">guestbook</span>
+        <span class="window-buttons" id="guestbook-arrow">─ □ +</span>
+      </div>
+      <div id="guestbook-body" style="display: none; border: 2px solid var(--ink); border-top: none; box-shadow: 5px 5px 0 var(--border); overflow: hidden;">
+        <iframe src="https://affordancesandhauntings.atabook.org" width="100%" height="400" frameborder="0" scrolling="yes" style="display: block;"></iframe>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>affordances and hauntings</p>
+  </footer>
+
+  <script>
+    function toggleGuestbook() {
+      const body = document.getElementById('guestbook-body');
+      const arrow = document.getElementById('guestbook-arrow');
+      if (body.style.display === 'none') {
+        body.style.display = 'block';
+        arrow.textContent = '─ □ ×';
+      } else {
+        body.style.display = 'none';
+        arrow.textContent = '─ □ +';
+      }
+    }
+
+    const canvas = document.getElementById('noise-canvas');
+    const ctx = canvas.getContext('2d');
+
+    let w, h;
+    let mx = -999, my = -999;
+    let interacting = false;
+    let interactTimer = 0;
+    let frozen = true;
+    let trailBuffer = [];
+    const PIXEL_SIZE = 5;
+    const HEIGHT = 71;
+    const RGB_RADIUS = 24;
+
+    function resize() {
+      w = canvas.parentElement.offsetWidth;
+      h = HEIGHT;
+      canvas.width = w;
+      canvas.height = h;
+      canvas.style.display = 'block';
+    }
+
+    function initTrail() {
+      const cols = Math.ceil(2000 / PIXEL_SIZE);
+      const rows = Math.ceil(HEIGHT / PIXEL_SIZE);
+      for (let r = 0; r < rows; r++) {
+        trailBuffer[r] = new Float32Array(cols).fill(0);
+      }
+    }
+
+    function drawNoise() {
+      const cols = Math.ceil(w / PIXEL_SIZE);
+      const rows = Math.ceil(h / PIXEL_SIZE);
+
+      for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
+          const px = col * PIXEL_SIZE;
+          const py = row * PIXEL_SIZE;
+          const cx = px + PIXEL_SIZE / 2;
+          const cy = py + PIXEL_SIZE / 2;
+
+          const d = Math.hypot(cx - mx, cy - my);
+          const influence = interacting ? Math.max(0, 1 - d / RGB_RADIUS) : 0;
+
+          const brightness = Math.random();
+
+          if (influence > 0.05) {
+            trailBuffer[row][col] = Math.max(trailBuffer[row][col], influence);
+          }
+
+          const trail = trailBuffer[row][col];
+
+          if (trail > 0.05) {
+            const alpha = trail * 0.4;
+            ctx.fillStyle = `rgba(220, 210, 235, ${alpha})`;
+            ctx.fillRect(px, py, PIXEL_SIZE, PIXEL_SIZE);
+            trailBuffer[row][col] = Math.max(0, trail - 0.035);
+          } else if (!frozen) {
+            const v = Math.round(brightness * 100 + 100);
+            const r = v - 20;
+            const g = v - 30;
+            const b = v + 10;
+            ctx.fillStyle = `rgb(${r},${g},${b})`;
+            ctx.fillRect(px, py, PIXEL_SIZE, PIXEL_SIZE);
+          }
+        }
+      }
+
+      if (interacting) interactTimer = 20;
+      if (interactTimer > 0) interactTimer--;
+      if (interactTimer === 0) interacting = false;
+
+      if (interacting) {
+        setTimeout(() => requestAnimationFrame(drawNoise), 80);
+      } else {
+        requestAnimationFrame(drawNoise);
+      }
+    }
+
+    canvas.addEventListener('mousemove', e => {
+      const rect = canvas.getBoundingClientRect();
+      mx = e.clientX - rect.left;
+      my = e.clientY - rect.top;
+      interacting = true;
+    });
+
+    canvas.addEventListener('mouseenter', () => { frozen = false; });
+
+    canvas.addEventListener('mouseleave', () => {
+      frozen = true;
+      interacting = false;
+      mx = -999;
+      my = -999;
+    });
+
+    canvas.addEventListener('touchmove', e => {
+      e.preventDefault();
+      const rect = canvas.getBoundingClientRect();
+      mx = e.touches[0].clientX - rect.left;
+      my = e.touches[0].clientY - rect.top;
+      interacting = true;
+      frozen = false;
+      interactTimer = 40;
+    }, { passive: false });
+
+    canvas.addEventListener('touchstart', e => {
+      e.preventDefault();
+      const rect = canvas.getBoundingClientRect();
+      mx = e.touches[0].clientX - rect.left;
+      my = e.touches[0].clientY - rect.top;
+      interacting = true;
+      frozen = false;
+      interactTimer = 60;
+    }, { passive: false });
+
+    canvas.addEventListener('touchend', () => {
+      frozen = true;
+      interacting = false;
+    });
+
+    window.addEventListener('resize', resize);
+
+    resize();
+    initTrail();
+    drawNoise();
+  </script>
+
+</body>
+</html>

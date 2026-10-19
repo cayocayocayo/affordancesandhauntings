@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portishead and no-stalgia — affordances and hauntings</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    :root {
+      --beige:      #ede6f7;
+      --beige-dark: #e0d6f0;
+      --ink:        #111111;
+      --ink-mid:    #7060a0;
+      --accent:     #3d2070;
+      --accent-alt: #6040b0;
+      --border:     #b09ad0;
+      --box-bg:     #faf8ff;
+    }
+    body {
+      background-color: var(--beige);
+      color: var(--ink);
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 16px;
+      line-height: 1.6;
+      padding: 4rem 1rem 2rem;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* === SITE HEADER (simplified) === */
+    header {
+      border: 2px solid var(--ink);
+      box-shadow: 5px 5px 0 var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .window-titlebar {
+      background-color: var(--ink);
+      color: var(--beige);
+      padding: 0.4rem 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .window-buttons {
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      opacity: 0.6;
+      user-select: none;
+    }
+    .site-title {
+      font-size: 0.85rem;
+      font-weight: bold;
+      color: var(--beige);
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+    .site-title:hover { opacity: 0.8; }
+    .window-body {
+      background-color: var(--box-bg);
+      padding: 0.6rem 0.75rem;
+    }
+    .back-link {
+      font-size: 0.8rem;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+    }
+    .back-link:hover {
+      color: var(--accent-alt);
+      border-bottom-color: var(--accent-alt);
+    }
+
+    /* === ASCII DIVIDER === */
+    .ascii-divider {
+      text-align: center;
+      color: var(--border);
+      font-size: 0.8rem;
+      letter-spacing: 4px;
+      margin: 0 0 2rem;
+      user-select: none;
+    }
+
+    /* === ARTICLE WINDOW === */
+    .article-window {
+      border: 2px solid var(--ink);
+      box-shadow: 5px 5px 0 var(--border);
+      margin-bottom: 3rem;
+    }
+    .article-titlebar {
+      background-color: var(--ink);
+      color: var(--beige);
+      padding: 0.4rem 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .article-title {
+      font-size: 0.85rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    .article-body {
+      background-color: var(--box-bg);
+      padding: 1.5rem 1.25rem 2rem;
+    }
+
+    /* === ARTICLE TYPOGRAPHY === */
+    .article-meta {
+      font-size: 0.75rem;
+      color: var(--ink-mid);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-body p {
+      margin-bottom: 1.2rem;
+      color: #1a0a30;
+    }
+    .article-body p:last-child {
+      margin-bottom: 0;
+    }
+    blockquote {
+      border-left: 3px solid var(--border);
+      margin: 1.5rem 0;
+      padding: 0.5rem 0 0.5rem 1rem;
+      color: var(--ink-mid);
+      font-style: italic;
+    }
+    blockquote cite {
+      display: block;
+      font-size: 0.75rem;
+      font-style: normal;
+      margin-top: 0.4rem;
+      opacity: 0.7;
+    }
+
+    /* === FOOTER === */
+    footer {
+      border-top: 2px solid var(--border);
+      padding-top: 1rem;
+      font-size: 0.75rem;
+      color: var(--ink-mid);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { color: var(--accent-alt); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="window-titlebar">
+      <a href="/" class="site-title">affordances and hauntings</a>
+      <span class="window-buttons">─ □ ×</span>
+    </div>
+    <div class="window-body">
+      <a href="/" class="back-link">← essays</a>
+    </div>
+  </header>
+
+  <div class="ascii-divider" aria-hidden="true">· · · ◈ · · ·</div>
+
+  <main>
+    <div class="article-window">
+      <div class="article-titlebar">
+        <span class="article-title">Portishead and no-stalgia</span>
+        <span class="window-buttons">─ □ ×</span>
+      </div>
+      <div class="article-body">
+        <p class="article-meta">2026 &nbsp;&nbsp; </p>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>affordances and hauntings</p>
+  </footer>
+
+</body>
+</html>
