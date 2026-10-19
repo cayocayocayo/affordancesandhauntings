@@ -4,8 +4,8 @@ Personal blog. Plain static HTML, no build step. Moved from Neocities.
 
 ## Layout
 
-- `index.html` : home page (links, noise box, writing list, guestbook)
-- `writing/*.html` : one file per post. Add a new post by copying an existing one, then add an `<li>` for it in the writing list in `index.html`.
+- `index.html` : home page (links, noise box, posts list, guestbook)
+- `writing/*.html` : one file per post. Add a new post by copying an existing one, then add an `<li>` for it in the posts list in `index.html`.
 
 ## Deploying (Cloudflare Pages)
 
